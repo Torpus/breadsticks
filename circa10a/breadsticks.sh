@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-RESULT=$(grep -oe "^breadsticks\s[0-9]\+$" $1 | awk '{ SUM += $2 } END { print SUM }')
+RESULT=$(awk '/^breadsticks\s[0-9]+$/ { SUM += $2 } END { print SUM }' $1)
 echo "RESULT: ${RESULT}"
