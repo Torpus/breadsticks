@@ -8,15 +8,13 @@ jobs:
     # TODO Go
     # - script: go ...
     #   name: "Go"
-
-  include:
     - stage: Torpus
-    - language: rust
-    - rust:
-      - stable
-      - beta
-      - nightly
-    - script:
-      - cd Torpus/breadsticks
-      - cargo build --verbose
-      - target/breadsticks ../../word_number.txt
+      language: rust
+      rust:
+        - stable
+        - beta
+        - nightly
+      script:
+        - cd Torpus/breadsticks
+        - cargo build --verbose
+        - target/breadsticks ../../word_number.txt
