@@ -13,4 +13,4 @@ jobs:
       script:
         - cd Torpus/breadsticks &&
           cargo build --verbose &&
-          target/breadsticks ../../word_number.txt
+          target/debug/breadsticks ../../word_number.txt
