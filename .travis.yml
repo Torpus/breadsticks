@@ -9,7 +9,6 @@ jobs:
     # - script: go ...
     #   name: "Go"
 
-jobs:
   include:
     - stage: Torpus
     - language: rust
