@@ -10,10 +10,6 @@ jobs:
     #   name: "Go"
     - stage: Torpus
       language: rust
-      rust:
-        - stable
-        - beta
-        - nightly
       script:
         - cd Torpus/breadsticks &&
           cargo build --verbose &&
