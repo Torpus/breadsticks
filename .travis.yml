@@ -15,6 +15,6 @@ jobs:
         - beta
         - nightly
       script:
-        - cd Torpus/breadsticks
-        - cargo build --verbose
-        - target/breadsticks ../../word_number.txt
+        - cd Torpus/breadsticks &&
+          cargo build --verbose &&
+          target/breadsticks ../../word_number.txt
