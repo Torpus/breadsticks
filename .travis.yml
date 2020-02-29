@@ -12,5 +12,5 @@ jobs:
       language: rust
       script:
         - cd Torpus/breadsticks &&
-          cargo build --verbose &&
-          time target/debug/breadsticks ../../word_number.txt
+          cargo build --verbose --release &&
+          time ./target/debug/breadsticks ../../word_number.txt
