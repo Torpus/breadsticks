@@ -1,12 +1,17 @@
-const fs = require("fs")
 const file = process.argv[2]
-const data = fs.readFileSync(file, "utf-8")
-const lines = data.split("\n")
+var fs = require("fs")
+var readline = require("readline")
+
+var inputStream = fs.createReadStream(file)
+var inputStreamInterface = readline.createInterface(inputStream)
 let sum = 0
-lines.filter((line) => {
-  if (line.includes("breadsticks")) {
-    sum += Number(line.substring(line.indexOf(" ") + 1))
+
+inputStreamInterface.on("line", (line) => {
+  if (line.startsWith("breadsticks")) {
+    sum += Number(line.split(" ")[1])
   }
 })
 
-console.log(`breadsticks sum: ${sum}`)
+inputStreamInterface.on("close", () => {
+  console.log(`breadsticks sum: ${sum}`)
+})
