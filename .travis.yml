@@ -5,6 +5,9 @@ jobs:
     - stage: circa10a
       name: awk
       script: time ./circa10a/breadsticks.sh word_number.txt
+    - stage: cujarrett
+      name: node
+      script: time node ./cujarrett/index.js word_number.txt
     # TODO Go
     # - script: go ...
     #   name: "Go"
