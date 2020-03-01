@@ -11,6 +11,11 @@ jobs:
       name: Go
       script: go build -ldflags="-s -w" circa10a/breadsticks.go &&
               time ./breadsticks word_number.txt
+    - stage: circa10a
+      language: python
+      python: 3.8
+      name: Python
+      script: time python ./circa10a/breadsticks.py word_number.txt
     - stage: cujarrett
       name: node
       script: time node ./cujarrett/index.js word_number.txt
