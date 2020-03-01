@@ -27,7 +27,9 @@ jobs:
         - clang
         - gcc
       name: C
-      script: gcc -o breadsticks ./circa10a/breadsticks.c &&
+      script: clang -o breadsticks ./circa10a/breadsticks.c &&
+              time ./breadsticks word_number.txt &&
+              gcc -o breadsticks ./circa10a/breadsticks.c &&
               time ./breadsticks word_number.txt
     - stage: cujarrett
       name: node
