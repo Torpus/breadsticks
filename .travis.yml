@@ -11,3 +11,9 @@ jobs:
     # TODO Go
     # - script: go ...
     #   name: "Go"
+    - stage: Torpus
+      language: rust
+      script:
+        - cd Torpus/breadsticks &&
+          cargo build --verbose --release &&
+          time target/release/breadsticks ../../word_number.txt
