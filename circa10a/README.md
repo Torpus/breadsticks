@@ -15,3 +15,10 @@ go build -ldflags="-s -w" circa10a/breadsticks.go
 time ./breadsticks word_number.txt
 3297861
 ```
+
+## Python
+
+```shell
+time python circa10a/breadsticks.py word_number.txt
+3297861
+```
