@@ -1,7 +1,7 @@
 fn readline(line: &str) -> usize{
     let mut it = line.split(' ');
     let (key, value) = match (it.next(), it.next()) {
-        (Some(key), Some(value)) => (key.trim(), value.trim()),
+        (Some(key), Some(value)) => (key, value),
         _ => panic!(),
     };
     let mut size: usize = 0;
