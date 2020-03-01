@@ -1,8 +1,5 @@
 language: generic
 
-go:
-  - 1.14
-
 jobs:
   include:
     - stage: circa10a
@@ -10,6 +7,7 @@ jobs:
       script: time ./circa10a/breadsticks.sh word_number.txt
     - stage: circa10a
       language: go
+      go: 1.14
       name: Go
       script: go build -ldflags="-s -w" circa10a/breadsticks.go &&
               time ./breadsticks word_number.txt
