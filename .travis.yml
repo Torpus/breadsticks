@@ -1,5 +1,8 @@
 language: generic
 
+go:
+  - 1.14
+
 jobs:
   include:
     - stage: circa10a
