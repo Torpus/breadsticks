@@ -9,7 +9,7 @@ jobs:
       language: go
       go: 1.14
       name: Go
-      script: go build -ldflags="-s -w" circa10a/breadsticks.go &&
+      script: go build -ldflags="-s -w" circa10a/go/breadsticks.go &&
               time ./breadsticks word_number.txt
     - stage: circa10a
       language: python
@@ -21,6 +21,16 @@ jobs:
       python: 2.7
       name: Ruby
       script: time ruby ./circa10a/breadsticks.rb word_number.txt
+    - stage: circa10a
+      language: generic
+      compiler:
+        - clang
+        - gcc
+      name: C
+      script: clang -O3 -o breadsticks ./circa10a/breadsticks.c &&
+              time ./breadsticks word_number.txt &&
+              gcc -O3 -o breadsticks ./circa10a/breadsticks.c &&
+              time ./breadsticks word_number.txt
     - stage: cujarrett
       name: node
       script: time node ./cujarrett/index.js word_number.txt
