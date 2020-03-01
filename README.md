@@ -9,6 +9,7 @@ The Great Breadstick Bakeoff
 * bash (awk)
 * go
 * python
+* ruby
 
 ## cujarrett
 

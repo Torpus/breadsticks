@@ -22,3 +22,10 @@ time ./breadsticks word_number.txt
 time python circa10a/breadsticks.py word_number.txt
 3297861
 ```
+
+## Ruby
+
+```shell
+time ruby circa10a/breadsticks.rb word_number.txt
+3297861
+```
