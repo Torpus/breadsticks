@@ -11,7 +11,7 @@ RESULT: 3297861
 ## Go
 
 ```shell
-go build -ldflags="-s -w" circa10a/breadsticks.go
+go build -ldflags="-s -w" circa10a/go/breadsticks.go
 time ./breadsticks word_number.txt
 3297861
 ```

@@ -9,7 +9,7 @@ jobs:
       language: go
       go: 1.14
       name: Go
-      script: go build -ldflags="-s -w" circa10a/breadsticks.go &&
+      script: go build -ldflags="-s -w" circa10a/go/breadsticks.go &&
               time ./breadsticks word_number.txt
     - stage: circa10a
       language: python
