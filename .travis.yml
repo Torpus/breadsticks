@@ -23,7 +23,9 @@ jobs:
       script: time ruby ./circa10a/breadsticks.rb word_number.txt
     - stage: circa10a
       language: generic
-      compiler: gcc
+      compiler:
+        - clang
+        - gcc
       name: C
       script: gcc -o breadsticks ./circa10a/breadsticks.c &&
               time ./breadsticks word_number.txt
