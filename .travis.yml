@@ -2,7 +2,7 @@ language: generic
 
 cache:
   directories:
-    - breadsticks/
+    - breadsticks_test_files/
 
 jobs:
   include:
