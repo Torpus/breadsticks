@@ -4,6 +4,9 @@ cache:
   directories:
     - breadsticks_test_files/
 
+env:
+  - BENCHMARK_FILE_PATH=breadsticks_test_files/randoms-1M.txt
+
 jobs:
   include:
     - stage: circa10a
@@ -22,7 +25,7 @@ jobs:
       python: 3.8
       name: Python
       before_script: ./download.sh
-      script: echo $BENCHMARK_FILE_PATH && time python ./circa10a/breadsticks.py $BENCHMARK_FILE_PATH
+      script: time python ./circa10a/breadsticks.py $BENCHMARK_FILE_PATH
     - stage: circa10a
       language: ruby
       python: 2.7
