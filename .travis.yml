@@ -1,11 +1,13 @@
 language: generic
 
+env:
+  - BENCHMARK_FILE=randoms-1M.txt
+  - BENCHMARK_FILE_DIR=breadsticks_test_files
+  - BENCHMARK_FILE_PATH=$BENCHMARK_FILE_DIR/$BENCHMARK_FILE
+
 cache:
   directories:
-    - breadsticks_test_files/
-
-env:
-  - BENCHMARK_FILE_PATH=breadsticks_test_files/randoms-1M.txt
+    - $BENCHMARK_FILE_DIR/
 
 jobs:
   include:
