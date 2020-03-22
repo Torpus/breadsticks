@@ -1,7 +1,7 @@
 language: generic
 
 env:
-  - BENCHMARK_FILE=word_number.txt
+  - BENCHMARK_FILE_PATH=word_number.txt
 
 # env:
 #   - BENCHMARK_FILE=randoms-500M.txt BENCHMARK_FILE_DIR=breadsticks_test_files BENCHMARK_FILE_PATH=$BENCHMARK_FILE_DIR/$BENCHMARK_FILE
