@@ -37,8 +37,8 @@ int buildChunks(char *pBegin, char *pEnd) {
 }
 
 
-int main () {
-  ifstream is("../word_number.txt");
+int main (int argc, char **argv) {
+  ifstream is(argv[1]);
   int iLength = 0;
   int iChunkSize = 0; iLength / THREAD_COUNT;
   char *pFileBuffer = nullptr;

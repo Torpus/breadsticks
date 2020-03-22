@@ -60,7 +60,7 @@ jobs:
         - g++
       name: C++
       script: cd hzuni && make bake &&
-              time ./breadsticks $BENCHMARK_FILE_PATH
+              time ./breadsticks ../$BENCHMARK_FILE_PATH
     - stage: MitchellPavel
       language: clojure
       before_install: ./download.sh && cd MitchellPavel/breadsticks
