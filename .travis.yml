@@ -54,6 +54,13 @@ jobs:
         - cd Torpus/breadsticks &&
           cargo build --verbose --release &&
           time target/release/breadsticks ../../$BENCHMARK_FILE_PATH
+    - stage: hzuni
+      language: C++
+      compiler:
+        - g++
+      name: C++
+      script: ./download.sh && cd hzuni && make bake &&
+              time ./breadsticks ../$BENCHMARK_FILE_PATH
     - stage: MitchellPavel
       language: clojure
       before_install: ./download.sh && cd MitchellPavel/breadsticks
