@@ -14,26 +14,26 @@ jobs:
   include:
     - stage: circa10a
       name: awk
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: time ./circa10a/breadsticks.sh $BENCHMARK_FILE_PATH
     - stage: circa10a
       language: go
       go: 1.14
       name: Go
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: go build -ldflags="-s -w" circa10a/go/breadsticks.go &&
               time ./breadsticks $BENCHMARK_FILE_PATH
     - stage: circa10a
       language: python
       python: 3.8
       name: Python
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: time python ./circa10a/breadsticks.py $BENCHMARK_FILE_PATH
     - stage: circa10a
       language: ruby
       python: 2.7
       name: Ruby
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: time ruby ./circa10a/breadsticks.rb $BENCHMARK_FILE_PATH
     - stage: circa10a
       language: generic
@@ -41,7 +41,7 @@ jobs:
         - clang
         - gcc
       name: C
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: clang -O3 -o breadsticks ./circa10a/breadsticks.c &&
               time ./breadsticks $BENCHMARK_FILE_PATH &&
               gcc -O3 -o breadsticks ./circa10a/breadsticks.c &&
@@ -52,7 +52,7 @@ jobs:
       script: time node ./cujarrett/index.js $BENCHMARK_FILE_PATH
     - stage: Torpus
       language: rust
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script:
         - cd Torpus/breadsticks &&
           cargo build --verbose --release &&
@@ -62,11 +62,11 @@ jobs:
       compiler:
         - g++
       name: C++
-      script: ./download.sh && cd hzuni && make bake &&
+      script: cd hzuni && make bake &&
               time ./breadsticks ../$BENCHMARK_FILE_PATH
     - stage: MitchellPavel
       language: clojure
-      before_install: ./download.sh && cd MitchellPavel/breadsticks
+      before_install: cd MitchellPavel/breadsticks
       script:
         - lein uberjar &&
           time java -jar target/breadsticks-0.0.0-SNAPSHOT-standalone.jar ../../$BENCHMARK_FILE_PATH
