@@ -56,6 +56,7 @@ jobs:
           time target/release/breadsticks ../../$BENCHMARK_FILE_PATH
     - stage: MitchellPavel
       language: clojure
+      before_install: cd MitchellPavel/breadsticks
       before_script: ./download.sh
       script:
         - cd MitchellPavel/breadsticks &&
