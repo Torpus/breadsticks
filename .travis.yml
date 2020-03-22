@@ -59,4 +59,4 @@ jobs:
       before_install: ./download.sh && cd MitchellPavel/breadsticks
       script:
         - lein uberjar &&
-          time java -jar target/breadsticks-0.0.0-SNAPSHOT-standalone.jar ../../$BENCHMARK_FILE_PATH
+          time java -jar -Xmx2048m target/breadsticks-0.0.0-SNAPSHOT-standalone.jar ../../$BENCHMARK_FILE_PATH
