@@ -1,3 +1,4 @@
+// Info: https://nodejs.org/api/readline.html#readline_readline_createinterface_options
 const file = process.argv[2]
 var fs = require("fs")
 var readline = require("readline")
