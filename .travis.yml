@@ -59,7 +59,7 @@ jobs:
       compiler:
         - g++
       name: C++
-      script: cd hzuni && make bake &&
+      script: ./download.sh && cd hzuni && make bake &&
               time ./breadsticks ../$BENCHMARK_FILE_PATH
     - stage: MitchellPavel
       language: clojure
