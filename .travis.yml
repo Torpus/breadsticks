@@ -54,3 +54,10 @@ jobs:
         - cd Torpus/breadsticks &&
           cargo build --verbose --release &&
           time target/release/breadsticks ../../$BENCHMARK_FILE_PATH
+    - stage: MitchellPavel
+      language: clojure
+      before_script: ./download.sh
+      script:
+        - cd MitchellPavel/breadsticks &&
+          lein uberjar && ls -l && ls -l target &&
+          time java -jar target/breadsticks.jar ../../$BENCHMARK_FILE_PATH
