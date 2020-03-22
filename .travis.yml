@@ -48,7 +48,7 @@ jobs:
               time ./breadsticks $BENCHMARK_FILE_PATH
     - stage: cujarrett
       name: node
-      before_script: ./download.sh
+      #before_script: ./download.sh
       script: time node ./cujarrett/index.js $BENCHMARK_FILE_PATH
     - stage: Torpus
       language: rust
